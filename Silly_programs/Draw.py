@@ -8,7 +8,7 @@ def main():
     length = 10
     angle = random.randint(90, 180)
 
-    turtle.tracer(50,0)
+    turtle.tracer(50, 0)
 
     turtle.colormode(255)
 
@@ -29,17 +29,14 @@ def main():
             pencolor(grabColor(f))
             forward(length)
             left(angle)
-            length += random.randint(0,10)
+            length += random.randint(0, 10)
 
-        turtle.setposition(0,0)
+        turtle.setposition(0, 0)
         turtle.setheading(0)
         length = 1
         angle = random.random() * 360
         print(angle)
         turtle.width(random.randint(0, 100))
-
-
-
 
         clear()
 
@@ -56,11 +53,10 @@ def grabColor(f):
         b = 0
     return [r, g, b]
 
-
-
     done()
 
     turtle.update()
+
 
 if __name__ == "__main__":
     main()
