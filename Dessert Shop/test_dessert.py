@@ -1,5 +1,6 @@
 from desserts import *
 
+
 def inc(x):
     return x + 1
 
@@ -41,7 +42,6 @@ def test_Candy():
     assert candy2.name == 'Yummy stuff'
 
 
-
 def test_Cookie():
     cookie = Cookie()
     assert cookie.cookieQty == 10
@@ -65,6 +65,7 @@ def test_Cookie():
     assert cookie2.pricePerDozen == 2
     cookie2.name = 'thing'
     assert cookie2.name == 'thing'
+
 
 def test_IceCream():
     cream = IceCream()
@@ -90,6 +91,7 @@ def test_IceCream():
     cream2.name = 'CREEEEEAAAAAMMMM'
     assert cream2.name == 'CREEEEEAAAAAMMMM'
 
+
 def test_Sundae():
     sundae = Sundae()
     assert sundae.toppingName == 'Marshmellows'
@@ -113,5 +115,4 @@ def test_Sundae():
     assert sundae2.toppingPrice == 999
     sundae2.name = 'Chocolate surprise'
     assert sundae2.name == 'Chocolate surprise'
-
-
+    

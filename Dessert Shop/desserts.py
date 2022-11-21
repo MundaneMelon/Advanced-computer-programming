@@ -102,5 +102,9 @@ class Sundae(IceCream):
     def toppingPrice(self, price):
         self._toppingPrice = price
 
+class Order(DessertItem):
+    pass
+
+
 
 
