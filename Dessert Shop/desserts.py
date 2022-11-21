@@ -14,7 +14,8 @@ class DessertItem:
 
 
 class Candy(DessertItem):
-    def __init__(self, candy_weight=5.5, price_per_pound=25.75, name=""):
+    def __init__(self, candy_weight=5.5, price_per_pound=25.75, name=''):
+        self.name = name
         self._candy_weight = candy_weight
         self._price_per_pound = price_per_pound
 
@@ -36,6 +37,7 @@ class Candy(DessertItem):
 
 class Cookie(DessertItem):
     def __init__(self, cookieQty=10, pricePerDozen=12.5, name=""):
+        self.name = name
         self._cookieQty = cookieQty
         self._pricePerDozen = pricePerDozen
 
@@ -57,12 +59,13 @@ class Cookie(DessertItem):
 
 class IceCream(DessertItem):
     def __init__(self, scoopCount=5, pricePerScoop=2.75, name=""):
+        self.name = name
         self._scoopCount = scoopCount
         self._pricePerScoop = pricePerScoop
 
     @property
     def scoopCount(self):
-        return self.scoopCount
+        return self._scoopCount
 
     @scoopCount.setter
     def scoopCount(self, scoops):
@@ -76,8 +79,10 @@ class IceCream(DessertItem):
     def pricePerScoop(self, price):
         self._pricePerScoop = price
 
+
 class Sundae(IceCream):
-    def __init__(self, toppingName, toppingPrice, name=""):
+    def __init__(self, toppingName='Marshmellows', toppingPrice=2.25, name=""):
+        self.name = name
         self._toppingName = toppingName
         self._toppingPrice = toppingPrice
 
