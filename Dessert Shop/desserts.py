@@ -1,7 +1,10 @@
-class DessertItem:
+from abc import ABC, abstractmethod
 
-    def __init__(self, name=""):
+class DessertItem(ABC):
+
+    def __init__(self, name="", tax_percent=7.25):
         self._name = name
+        self._tax_percent = tax_percent
 
     @property
     def name(self):
@@ -11,13 +14,27 @@ class DessertItem:
     def name(self, name):
         self._name = name
 
+    @property
+    def tax_percent(self):
+        return self._tax_percent
+
+    @abstractmethod
+    def calculate_cost(self):
+        pass
+
+    def calculate_tax(self):
+        return self.calculate_cost() * (self.tax_percent * .01)
+
 
 
 class Candy(DessertItem):
-    def __init__(self, name='', candy_weight=5.5, price_per_pound=25.75):
-        self.name = name
+    def __init__(self, name='', candy_weight=5.5, price_per_pound=2.75, tax_percent=7.25):
+        super().__init__(name, tax_percent)
+        self._name = name
         self._candy_weight = candy_weight
         self._price_per_pound = price_per_pound
+        self._tax_percent = tax_percent
+
 
     @property
     def candy_weight(self):
@@ -35,8 +52,12 @@ class Candy(DessertItem):
     def price_per_pound(self, price):
         self._price_per_pound = price
 
+    def calculate_cost(self):
+        return self.candy_weight * self.price_per_pound
+
 class Cookie(DessertItem):
     def __init__(self, name='', cookieQty=10, pricePerDozen=12.5):
+        super().__init__()
         self.name = name
         self._cookieQty = cookieQty
         self._pricePerDozen = pricePerDozen
@@ -59,6 +80,7 @@ class Cookie(DessertItem):
 
 class IceCream(DessertItem):
     def __init__(self, name='', scoopCount=5, pricePerScoop=2.75):
+        super().__init__()
         self.name = name
         self._scoopCount = scoopCount
         self._pricePerScoop = pricePerScoop
@@ -82,6 +104,7 @@ class IceCream(DessertItem):
 
 class Sundae(IceCream):
     def __init__(self, name='', toppingName='Marshmellows', toppingPrice=2.25):
+        super.__init__()
         self.name = name
         self._toppingName = toppingName
         self._toppingPrice = toppingPrice
