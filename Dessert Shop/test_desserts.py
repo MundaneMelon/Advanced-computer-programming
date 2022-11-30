@@ -1,22 +1,6 @@
 from desserts import *
 
 
-def inc(x):
-    return x + 1
-
-
-def test_DessertItem():
-    dessert = DessertItem()
-    assert dessert.name == ""
-    dessert2 = DessertItem('Brownie')
-    assert dessert2.name == 'Brownie'
-
-    dessert.name = 'Cake'
-    assert dessert.name == 'Cake'
-    dessert2.name = 'Cake'
-    assert dessert2.name == 'Cake'
-
-
 def test_Candy():
     candy = Candy()
     assert candy.candy_weight == 5.5

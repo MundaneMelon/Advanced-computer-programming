@@ -53,7 +53,7 @@ class Candy(DessertItem):
         self._price_per_pound = price
 
     def calculate_cost(self):
-        return self.candy_weight() * self.price_per_pound()
+        return self.candy_weight * self.price_per_pound
 
 class Cookie(DessertItem):
     def __init__(self, name='', cookieQty=10, pricePerDozen=12.5, tax_percent=7.25):
@@ -79,8 +79,8 @@ class Cookie(DessertItem):
     def pricePerDozen(self, price):
         self._pricePerDozen = price
 
-    def calculate_tax(self):
-        return self.cookieQty() * self.pricePerDozen()
+    def calculate_cost(self):
+        return self.cookieQty * self.pricePerDozen
 
 class IceCream(DessertItem):
     def __init__(self, name='', scoopCount=5, pricePerScoop=2.75, tax_percent=7.25):
@@ -106,14 +106,14 @@ class IceCream(DessertItem):
     def pricePerScoop(self, price):
         self._pricePerScoop = price
 
-    def calculate_tax(self):
-        return self.scoopCount() * self.pricePerScoop()
+    def calculate_cost(self):
+        return self.scoopCount * self.pricePerScoop
 
 
 class Sundae(IceCream):
     def __init__(self, name='', toppingName='Marshmellows', \
                  toppingPrice=2.25, pricePerScoop=2.75, scoopCount=5, tax_percent=7.25):
-        super.__init__(name, tax_percent)
+        super().__init__(name, tax_percent)
         self.name = name
         self._toppingName = toppingName
         self._toppingPrice = toppingPrice
@@ -137,18 +137,34 @@ class Sundae(IceCream):
     def toppingPrice(self, price):
         self._toppingPrice = price
 
-    def calculate_tax(self):
-        return (self.scoopCount() * self.pricePerScoop()) + self.toppingPrice()
+    def calculate_cost(self):
+        return (self.scoopCount * self.pricePerScoop) + self.toppingPrice
 
 
 class Order():
     def __init__(self, order=[]):
-        self.order = order
+        self._order = order
+
+    @property
+    def order(self):
+        return self._order
 
     def add(self, listItem):
         self.order.append(listItem)
 
     def item_count(self):
         return len(self.order)
+
+    def order_cost(self):
+        result = 0
+        for i in self.order:
+            result += i.calculate_cost()
+        return result
+
+    def order_tax(self):
+        result = 0
+        for i in self.order:
+            result += i.calculate_tax()
+        return result
 
 

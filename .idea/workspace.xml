@@ -35,7 +35,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.testMain">
+  <component name="RunManager" selected="Python.dessertshop">
     <configuration name="desserts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Advanced-computer-programming" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -43,9 +43,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\mikeb\PycharmProjects\pythonProject\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dessert Shop" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -65,9 +65,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\mikeb\AppData\Local\Microsoft\WindowsApps\python3.9.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dessert Shop" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -155,11 +155,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testMain" />
         <item itemvalue="Python.dessertshop" />
+        <item itemvalue="Python.desserts" />
+        <item itemvalue="Python.testMain" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.desserts" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +181,7 @@
       <workItem from="1669609623265" duration="3801000" />
       <workItem from="1669744475154" duration="4601000" />
       <workItem from="1669828090273" duration="1919000" />
+      <workItem from="1669847636370" duration="3239000" />
     </task>
     <servers />
   </component>
@@ -199,18 +200,18 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Advanced_computer_programming$main.coverage" NAME="main Coverage Results" MODIFIED="1669746844415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/4.3" />
+    <SUITE FILE_PATH="coverage/Advanced_computer_programming$desserts.coverage" NAME="desserts Coverage Results" MODIFIED="1669849886367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dessert Shop" />
+    <SUITE FILE_PATH="coverage/Advanced_computer_programming$Draw.coverage" NAME="Draw Coverage Results" MODIFIED="1668619300286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Silly_programs" />
     <SUITE FILE_PATH="coverage/Advanced_computer_programming$test.coverage" NAME="test Coverage Results" MODIFIED="1669747444489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Advanced_computer_programming$test_desserts.coverage" NAME="test_desserts Coverage Results" MODIFIED="1669003438323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dessert Shop" />
-    <SUITE FILE_PATH="coverage/Advanced_computer_programming$main.coverage" NAME="main Coverage Results" MODIFIED="1669746844415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/4.3" />
-    <SUITE FILE_PATH="coverage/Advanced_computer_programming$dessertshop.coverage" NAME="dessertshop Coverage Results" MODIFIED="1669747522779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dessert Shop" />
     <SUITE FILE_PATH="coverage/Advanced_computer_programming$testMain.coverage" NAME="testMain Coverage Results" MODIFIED="1669749057913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dessert Shop" />
     <SUITE FILE_PATH="coverage/Advanced_computer_programming$decrypt.coverage" NAME="decrypt Coverage Results" MODIFIED="1669002685456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Advanced_computer_programming$instance_subclass_test.coverage" NAME="instance_subclass_test Coverage Results" MODIFIED="1668795786738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/4.1" />
-    <SUITE FILE_PATH="coverage/Advanced_computer_programming$Draw.coverage" NAME="Draw Coverage Results" MODIFIED="1668619300286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Silly_programs" />
-    <SUITE FILE_PATH="coverage/Advanced_computer_programming$test_dessert__1_.coverage" NAME="test_dessert (1) Coverage Results" MODIFIED="1669005526343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dessert Shop" />
+    <SUITE FILE_PATH="coverage/Advanced_computer_programming$dessertshop.coverage" NAME="dessertshop Coverage Results" MODIFIED="1669850882464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dessert Shop" />
     <SUITE FILE_PATH="coverage/Advanced_computer_programming$.coverage" NAME=" Coverage Results" MODIFIED="1668796289333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/4.1" />
-    <SUITE FILE_PATH="coverage/Advanced_computer_programming$desserts.coverage" NAME="desserts Coverage Results" MODIFIED="1669615569779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dessert Shop" />
+    <SUITE FILE_PATH="coverage/Advanced_computer_programming$test_dessert__1_.coverage" NAME="test_dessert (1) Coverage Results" MODIFIED="1669005526343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dessert Shop" />
     <SUITE FILE_PATH="coverage/Advanced_computer_programming$Tutorial3_1.coverage" NAME="Tutorial3.1 Coverage Results" MODIFIED="1666891876617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/3.1" />
+    <SUITE FILE_PATH="coverage/Advanced_computer_programming$instance_subclass_test.coverage" NAME="instance_subclass_test Coverage Results" MODIFIED="1668795786738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/4.1" />
     <SUITE FILE_PATH="coverage/Advanced_computer_programming$encrypt.coverage" NAME="encrypt Coverage Results" MODIFIED="1669002680781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
