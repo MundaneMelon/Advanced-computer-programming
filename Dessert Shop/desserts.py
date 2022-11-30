@@ -53,14 +53,15 @@ class Candy(DessertItem):
         self._price_per_pound = price
 
     def calculate_cost(self):
-        return self.candy_weight * self.price_per_pound
+        return self.candy_weight() * self.price_per_pound()
 
 class Cookie(DessertItem):
-    def __init__(self, name='', cookieQty=10, pricePerDozen=12.5):
-        super().__init__()
-        self.name = name
+    def __init__(self, name='', cookieQty=10, pricePerDozen=12.5, tax_percent=7.25):
+        super().__init__(name, tax_percent)
+        self._name = name
         self._cookieQty = cookieQty
         self._pricePerDozen = pricePerDozen
+        self._tax_percent = tax_percent
 
     @property
     def cookieQty(self):
@@ -78,12 +79,16 @@ class Cookie(DessertItem):
     def pricePerDozen(self, price):
         self._pricePerDozen = price
 
+    def calculate_tax(self):
+        return self.cookieQty() * self.pricePerDozen()
+
 class IceCream(DessertItem):
-    def __init__(self, name='', scoopCount=5, pricePerScoop=2.75):
-        super().__init__()
-        self.name = name
+    def __init__(self, name='', scoopCount=5, pricePerScoop=2.75, tax_percent=7.25):
+        super().__init__(name, tax_percent)
+        self._name = name
         self._scoopCount = scoopCount
         self._pricePerScoop = pricePerScoop
+        self._tax_percent = tax_percent
 
     @property
     def scoopCount(self):
@@ -101,13 +106,20 @@ class IceCream(DessertItem):
     def pricePerScoop(self, price):
         self._pricePerScoop = price
 
+    def calculate_tax(self):
+        return self.scoopCount() * self.pricePerScoop()
+
 
 class Sundae(IceCream):
-    def __init__(self, name='', toppingName='Marshmellows', toppingPrice=2.25):
-        super.__init__()
+    def __init__(self, name='', toppingName='Marshmellows', \
+                 toppingPrice=2.25, pricePerScoop=2.75, scoopCount=5, tax_percent=7.25):
+        super.__init__(name, tax_percent)
         self.name = name
         self._toppingName = toppingName
         self._toppingPrice = toppingPrice
+        self._tax_percent = tax_percent
+        self._pricePerScoop = pricePerScoop
+        self._scoopCount = scoopCount
 
     @property
     def toppingName(self):
@@ -124,6 +136,9 @@ class Sundae(IceCream):
     @toppingPrice.setter
     def toppingPrice(self, price):
         self._toppingPrice = price
+
+    def calculate_tax(self):
+        return (self.scoopCount() * self.pricePerScoop()) + self.toppingPrice()
 
 
 class Order():
