@@ -19,7 +19,7 @@ def main():
 
         result += "$" + str(round(i.calculate_cost(), 2)) + "[Tax: $" + str(round(i.calculate_tax(), 2)) + "]"
         print(result)
-    print("--------------------------------------------------------")
+    print("-" * 30)
     print(find_spaces("Order Subtotals:") + " $" + str(round(order.order_cost(), 2)) + '[Tax:$' + str(round(order.order_tax(), 2)) + ']')
     print(find_spaces("Order Total:") + " $" + str(round((order.order_cost() + order.order_tax()), 2)))
     print(find_spaces("Total items in the order:") + " " + str(order.item_count()))

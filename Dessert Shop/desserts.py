@@ -18,6 +18,11 @@ class DessertItem(ABC):
     def tax_percent(self):
         return self._tax_percent
 
+    @tax_percent.setter
+    def tax_percent(self, tax_percent):
+        self._tax_percent = tax_percent
+
+
     @abstractmethod
     def calculate_cost(self):
         pass
