@@ -31,7 +31,6 @@ class DessertItem(ABC):
 
 
 
-
 class Candy(DessertItem):
     def __init__(self, name='', candy_weight=5.5, price_per_pound=2.75, tax_percent=7.25):
         super().__init__(name, tax_percent)
@@ -60,13 +59,6 @@ class Candy(DessertItem):
     def calculate_cost(self):
         return self.candy_weight * self.price_per_pound
 
-    @property
-    def __str__(self):
-        result = f"{self.candy_weight}lbs @ ${self.price_per_pound}/lb: ${self.calculate_cost():.2f}"
-        return f'{self.name}\n     {find_spaces(result)}[Tax: ${self.calculate_tax():.2f}]'
-        #Find spaces is a module I wrote to make this easier. It's at the bottom of this file
-
-
 class Cookie(DessertItem):
     def __init__(self, name='', cookieQty=10, pricePerDozen=12.5, tax_percent=7.25):
         super().__init__(name, tax_percent)
@@ -93,11 +85,6 @@ class Cookie(DessertItem):
 
     def calculate_cost(self):
         return self.cookieQty * self.pricePerDozen
-
-    @property
-    def __str__(self):
-        result = f"{self.cookieQty} @ ${self.pricePerDozen}/dozen: ${self.calculate_cost():.2f}"
-        return f'{self.name}\n     {find_spaces(result)}[Tax: ${self.calculate_tax():.2f}]'
 
 class IceCream(DessertItem):
     def __init__(self, name='', scoopCount=5, pricePerScoop=2.75, tax_percent=7.25):
@@ -126,10 +113,6 @@ class IceCream(DessertItem):
     def calculate_cost(self):
         return self.scoopCount * self.pricePerScoop
 
-    @property
-    def __str__(self):
-        result = f"{self.scoopCount} @ ${self.pricePerScoop}/scoop: ${self.calculate_cost():.2f}"
-        return f'{self.name}\n     {find_spaces(result)}[Tax: ${self.calculate_tax():.2f}]'
 
 class Sundae(IceCream):
     def __init__(self, name='', toppingName='Marshmellows', \
@@ -161,12 +144,6 @@ class Sundae(IceCream):
     def calculate_cost(self):
         return (self.scoopCount * self.pricePerScoop) + self.toppingPrice
 
-    @property
-    def __str__(self):
-        result = f"{self.scoopCount} @ ${self.pricePerScoop}/scoop: \
-        \n{self.toppingName} @ ${self.toppingPrice}: ${self.calculate_cost():.2f}"
-        return f'{self.name}\n     {find_spaces(result)}[Tax: ${self.calculate_tax():.2f}]'
-
 
 class Order():
     def __init__(self, order=[]):
@@ -194,15 +171,4 @@ class Order():
             result += i.calculate_tax()
         return result
 
-    @property
-    def __str__(self):
-        for i in self.order:
-            print(i.__str__)
 
-def find_spaces(str):
-    spaces = 35 - len(str)
-    if spaces > 0:
-        str += " " * spaces
-    else:
-        str += " "
-    return str
