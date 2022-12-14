@@ -18,9 +18,9 @@ def main():
     # print("-" * 30)
 
     order.__str__
-    print(find_spaces("Order Subtotals:") + " $" + str(round(order.order_cost(), 2)) + '[Tax:$' + str(round(order.order_tax(), 2)) + ']')
-    print(find_spaces("Order Total:") + " $" + str(round((order.order_cost() + order.order_tax()), 2)))
-    print(find_spaces("Total items in the order:") + " " + str(order.item_count()))
+    print(find_spaces("Order Subtotals:", 30) + " $" + str(round(order.order_cost(), 2)) + '[Tax:$' + str(round(order.order_tax(), 2)) + ']')
+    print(find_spaces("Order Total:", 30) + " $" + str(round((order.order_cost() + order.order_tax()), 2)))
+    print(find_spaces("Total items in the order:", 30) + " " + str(order.item_count()))
 
 
 def main_menu(order):
