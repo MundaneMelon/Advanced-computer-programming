@@ -62,10 +62,10 @@ class Candy(DessertItem):
     def __str__(self):
         result = f"     {self.candy_weight}lbs @ ${self.price_per_pound}/lb:"
         result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
-        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}"
+        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
         return f"{self.name}\n{result}"
 
-        # Find spaces is a module I wrote to make this easier. It's at the bottom of this file
+        # Find spaces is a function I wrote to make this easier. It's at the bottom of this file
 
 
 class Cookie(DessertItem):
@@ -97,9 +97,9 @@ class Cookie(DessertItem):
 
     @property
     def __str__(self):
-        result = f"     {self.cookieQty} cookies @ ${self.pricePerDozen}/cookie:"
-        result = f"{find_spaces(result, 30)}${self.calculate_cost()}"
-        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax()}"
+        result = f"     {self.cookieQty} @ ${self.pricePerDozen}/cookie:"
+        result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
+        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
         return f"{self.name}\n{result}"
 
 
@@ -132,9 +132,9 @@ class IceCream(DessertItem):
 
     @property
     def __str__(self):
-        result = f"     {self.scoopCount} scoops @ ${self.pricePerScoop}/scoops:"
-        result = f"{find_spaces(result, 30)}${self.calculate_cost()}"
-        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax()}"
+        result = f"     {self.scoopCount} @ ${self.pricePerScoop}/scoop:"
+        result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
+        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
         return f"{self.name}\n{result}"
 
 
@@ -170,9 +170,11 @@ class Sundae(IceCream):
 
     @property
     def __str__(self):
-        result = f"     {self.toppingName} @ ${self.toppingPrice}:"
-        result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
-        return f"{self.name}\n     {self.scoopCount} scoops @ ${self.pricePerScoop}/scoop\n{result}"
+        result = f"     {self.scoopCount} @ ${self.pricePerScoop}/scoop:\n"
+        result2 = f"     {self.toppingName} @ ${self.toppingPrice}:"
+        result2 = f"{find_spaces(result2, 30)}${self.calculate_cost():.2f}"
+        result2 = f"{find_spaces(result2, 40)}[Tax:${self.calculate_tax():.2f}]\n"
+        return f"{self.name}\n{result}\n{result2}"
 
 
 class Order():
@@ -208,8 +210,10 @@ class Order():
             result += f"{i.__str__}\n"
         result += '------------------------------------------------------\n'
         result += f"Total items in the order: {self.item_count()}\n"
-        result2 = f"Order Subtotals:|         {self.order_cost()}"
-        result += f"{find_spaces(result2, 35)}\n"
+        result2 = f"Order Subtotals:|         ${self.order_cost():.2f}"
+        result += f"{find_spaces(result2, 40)}[Tax: ${self.order_tax():.2f}]\n"
+        result3 = f"Order Total:"
+        result += f"{find_spaces(result3, 40)}${self.order_tax() + self.order_cost():.2f}"
 
 
         return result
