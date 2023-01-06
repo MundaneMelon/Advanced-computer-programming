@@ -170,11 +170,18 @@ class Sundae(IceCream):
 
     @property
     def __str__(self):
+<<<<<<< Updated upstream
         result = f"     {self.scoopCount} @ ${self.pricePerScoop}/scoop:\n"
         result2 = f"     {self.toppingName} @ ${self.toppingPrice}:"
         result2 = f"{find_spaces(result2, 30)}${self.calculate_cost():.2f}"
         result2 = f"{find_spaces(result2, 40)}[Tax:${self.calculate_tax():.2f}]\n"
         return f"{self.name}\n{result}\n{result2}"
+=======
+        result = f"     {self.toppingName} @ ${self.toppingPrice}:"
+        result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
+        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
+        return f"{self.name}\n     {self.scoopCount} scoops @ ${self.pricePerScoop}\n{result}"
+>>>>>>> Stashed changes
 
 
 class Order():
