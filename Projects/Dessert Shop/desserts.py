@@ -1,11 +1,20 @@
 from abc import ABC, abstractmethod
-from packaging import *
+from freeze import *
 
 class DessertItem(ABC):
 
     def __init__(self, name="", tax_percent=7.25):
         self._name = name
         self._tax_percent = tax_percent
+        self._packaging = None
+
+    @property
+    def packaging(self):
+        return self._packaging
+
+    @packaging.setter
+    def packaging(self, new_packaging):
+        self._packaging = new_packaging
 
     @property
     def name(self):
@@ -38,6 +47,7 @@ class Candy(DessertItem):
         self._candy_weight = candy_weight
         self._price_per_pound = price_per_pound
         self._tax_percent = tax_percent
+        self.packaging = "Bag"
 
     @property
     def candy_weight(self):
@@ -63,7 +73,7 @@ class Candy(DessertItem):
         result = f"     {self.candy_weight}lbs @ ${self.price_per_pound}/lb:"
         result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
         result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
-        return f"{self.name}\n{result}"
+        return f"{self.name} ({self.packaging})\n{result}"
 
         # Find spaces is a function I wrote to make this easier. It's at the bottom of this file
 
@@ -75,6 +85,8 @@ class Cookie(DessertItem):
         self._cookieQty = cookieQty
         self._pricePerDozen = pricePerDozen
         self._tax_percent = tax_percent
+        self.packaging = "Box"
+        self._temperature = "thawing"
 
     @property
     def cookieQty(self):
@@ -92,15 +104,33 @@ class Cookie(DessertItem):
     def pricePerDozen(self, price):
         self._pricePerDozen = price
 
+
+
     def calculate_cost(self):
         return self.cookieQty * self.pricePerDozen
+
+    # Freeze implementation
+    @property
+    def temperature(self):
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, value):
+        self._temperature = value
+
+    def chill(self):
+        self.temperature = "chilling"
+
+    def thaw(self):
+        self.temperature = "thawing"
+
 
     @property
     def __str__(self):
         result = f"     {self.cookieQty} @ ${self.pricePerDozen}/cookie:"
         result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
         result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
-        return f"{self.name}\n{result}"
+        return f"{self.name} ({self.packaging})\n{result}"
 
 
 class IceCream(DessertItem):
@@ -110,6 +140,7 @@ class IceCream(DessertItem):
         self._scoopCount = scoopCount
         self._pricePerScoop = pricePerScoop
         self._tax_percent = tax_percent
+        self.packaging = "Bowl"
 
     @property
     def scoopCount(self):
@@ -130,12 +161,27 @@ class IceCream(DessertItem):
     def calculate_cost(self):
         return self.scoopCount * self.pricePerScoop
 
+    # Freeze implementation
+    @property
+    def temperature(self):
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, value):
+        self._temperature = value
+
+    def chill(self):
+        self.temperature = "chilling"
+
+    def thaw(self):
+        self.temperature = "thawing"
+
     @property
     def __str__(self):
         result = f"     {self.scoopCount} @ ${self.pricePerScoop}/scoop:"
         result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
         result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
-        return f"{self.name}\n{result}"
+        return f"{self.name} ({self.packaging})\n{result}"
 
 
 class Sundae(IceCream):
@@ -148,6 +194,7 @@ class Sundae(IceCream):
         self._tax_percent = tax_percent
         self._pricePerScoop = pricePerScoop
         self._scoopCount = scoopCount
+        self.packaging = "Boat"
 
     @property
     def toppingName(self):
@@ -173,7 +220,7 @@ class Sundae(IceCream):
         result = f"     {self.toppingName} @ ${self.toppingPrice}:"
         result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
         result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
-        return f"{self.name}\n     {self.scoopCount} scoops @ ${self.pricePerScoop}\n{result}"
+        return f"{self.name} ({self.packaging})\n     {self.scoopCount} scoops @ ${self.pricePerScoop}\n{result}"
 
 
 
@@ -216,7 +263,7 @@ class Order():
         result += f"{find_spaces(result3, 40)}${self.order_tax() + self.order_cost():.2f}"
 
 
-        return result
+        return f"{result}\n------------------------------------------------------"
 
 
 # def find_spaces(str, space):

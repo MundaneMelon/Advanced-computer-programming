@@ -1,10 +1,12 @@
 from desserts import *
+from freeze import *
 
 def main():
 
 
     order = Order()
     main_menu(order)
+    print(order.__str__)
 
     # print("\n" + " " * 13 + 'Receipt')
     #
@@ -22,7 +24,7 @@ def main():
     # print(find_spaces("Order Total:", 30) + " $" + str(round((order.order_cost() + order.order_tax()), 2)))
     # print(find_spaces("Total items in the order:", 30) + " " + str(order.item_count()))
 
-    print(order.__str__)
+
 
 
 
@@ -32,7 +34,7 @@ def main_menu(order):
 3: Ice Cream
 4: Sundae''')
     try:
-        user_input = int(input('What would you like to add ot the order? (1-4, Enter for done):'))
+        user_input = int(input('What would you like to add to the order? (1-4, Enter for done):'))
     except ValueError:
         pass
     print(" ")
