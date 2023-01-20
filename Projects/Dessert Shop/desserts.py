@@ -48,6 +48,7 @@ class Candy(DessertItem):
         self._price_per_pound = price_per_pound
         self._tax_percent = tax_percent
         self.packaging = "Bag"
+        self.type = "Candy"
 
     @property
     def candy_weight(self):
@@ -87,6 +88,7 @@ class Cookie(DessertItem):
         self._tax_percent = tax_percent
         self.packaging = "Box"
         self._temperature = "thawing"
+        self.type = "Cookie"
 
     @property
     def cookieQty(self):
@@ -141,6 +143,7 @@ class IceCream(DessertItem):
         self._pricePerScoop = pricePerScoop
         self._tax_percent = tax_percent
         self.packaging = "Bowl"
+        self.type = "IceCream"
 
     @property
     def scoopCount(self):
@@ -195,6 +198,7 @@ class Sundae(IceCream):
         self._pricePerScoop = pricePerScoop
         self._scoopCount = scoopCount
         self.packaging = "Boat"
+        self.type = "Sundae"
 
     @property
     def toppingName(self):
