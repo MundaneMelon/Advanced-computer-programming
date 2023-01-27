@@ -1,20 +1,10 @@
 from abc import ABC, abstractmethod
-from freeze import *
 
 class DessertItem(ABC):
 
     def __init__(self, name="", tax_percent=7.25):
         self._name = name
         self._tax_percent = tax_percent
-        self._packaging = None
-
-    @property
-    def packaging(self):
-        return self._packaging
-
-    @packaging.setter
-    def packaging(self, new_packaging):
-        self._packaging = new_packaging
 
     @property
     def name(self):
@@ -40,6 +30,7 @@ class DessertItem(ABC):
         return self.calculate_cost() * (self.tax_percent * .01)
 
 
+
 class Candy(DessertItem):
     def __init__(self, name='', candy_weight=5.5, price_per_pound=2.75, tax_percent=7.25):
         super().__init__(name, tax_percent)
@@ -47,8 +38,7 @@ class Candy(DessertItem):
         self._candy_weight = candy_weight
         self._price_per_pound = price_per_pound
         self._tax_percent = tax_percent
-        self.packaging = "Bag"
-        self.type = "Candy"
+
 
     @property
     def candy_weight(self):
@@ -69,16 +59,6 @@ class Candy(DessertItem):
     def calculate_cost(self):
         return self.candy_weight * self.price_per_pound
 
-    @property
-    def __str__(self):
-        result = f"     {self.candy_weight}lbs @ ${self.price_per_pound}/lb:"
-        result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
-        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
-        return f"{self.name} ({self.packaging})\n{result}"
-
-        # Find spaces is a function I wrote to make this easier. It's at the bottom of this file
-
-
 class Cookie(DessertItem):
     def __init__(self, name='', cookieQty=10, pricePerDozen=12.5, tax_percent=7.25):
         super().__init__(name, tax_percent)
@@ -86,9 +66,6 @@ class Cookie(DessertItem):
         self._cookieQty = cookieQty
         self._pricePerDozen = pricePerDozen
         self._tax_percent = tax_percent
-        self.packaging = "Box"
-        self._temperature = "thawing"
-        self.type = "Cookie"
 
     @property
     def cookieQty(self):
@@ -106,34 +83,8 @@ class Cookie(DessertItem):
     def pricePerDozen(self, price):
         self._pricePerDozen = price
 
-
-
     def calculate_cost(self):
         return self.cookieQty * self.pricePerDozen
-
-    # Freeze implementation
-    @property
-    def temperature(self):
-        return self._temperature
-
-    @temperature.setter
-    def temperature(self, value):
-        self._temperature = value
-
-    def chill(self):
-        self.temperature = "chilling"
-
-    def thaw(self):
-        self.temperature = "thawing"
-
-
-    @property
-    def __str__(self):
-        result = f"     {self.cookieQty} @ ${self.pricePerDozen}/cookie:"
-        result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
-        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
-        return f"{self.name} ({self.packaging})\n{result}"
-
 
 class IceCream(DessertItem):
     def __init__(self, name='', scoopCount=5, pricePerScoop=2.75, tax_percent=7.25):
@@ -142,8 +93,6 @@ class IceCream(DessertItem):
         self._scoopCount = scoopCount
         self._pricePerScoop = pricePerScoop
         self._tax_percent = tax_percent
-        self.packaging = "Bowl"
-        self.type = "IceCream"
 
     @property
     def scoopCount(self):
@@ -164,31 +113,9 @@ class IceCream(DessertItem):
     def calculate_cost(self):
         return self.scoopCount * self.pricePerScoop
 
-    # Freeze implementation
-    @property
-    def temperature(self):
-        return self._temperature
-
-    @temperature.setter
-    def temperature(self, value):
-        self._temperature = value
-
-    def chill(self):
-        self.temperature = "chilling"
-
-    def thaw(self):
-        self.temperature = "thawing"
-
-    @property
-    def __str__(self):
-        result = f"     {self.scoopCount} @ ${self.pricePerScoop}/scoop:"
-        result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
-        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
-        return f"{self.name} ({self.packaging})\n{result}"
-
 
 class Sundae(IceCream):
-    def __init__(self, name='', toppingName='Marshmallows', \
+    def __init__(self, name='', toppingName='Marshmellows', \
                  toppingPrice=2.25, pricePerScoop=2.75, scoopCount=5, tax_percent=7.25):
         super().__init__(name, tax_percent)
         self.name = name
@@ -197,8 +124,6 @@ class Sundae(IceCream):
         self._tax_percent = tax_percent
         self._pricePerScoop = pricePerScoop
         self._scoopCount = scoopCount
-        self.packaging = "Boat"
-        self.type = "Sundae"
 
     @property
     def toppingName(self):
@@ -218,14 +143,6 @@ class Sundae(IceCream):
 
     def calculate_cost(self):
         return (self.scoopCount * self.pricePerScoop) + self.toppingPrice
-
-    @property
-    def __str__(self):
-        result = f"     {self.toppingName} @ ${self.toppingPrice}:"
-        result = f"{find_spaces(result, 30)}${self.calculate_cost():.2f}"
-        result = f"{find_spaces(result, 40)}[Tax:${self.calculate_tax():.2f}]"
-        return f"{self.name} ({self.packaging})\n     {self.scoopCount} scoops @ ${self.pricePerScoop}\n{result}"
-
 
 
 class Order():
@@ -254,32 +171,4 @@ class Order():
             result += i.calculate_tax()
         return result
 
-    @property
-    def __str__(self):
-        result = '------------Receipt---------------\n'
-        for i in self.order:
-            result += f"{i.__str__}\n"
-        result += '------------------------------------------------------\n'
-        result += f"Total items in the order: {self.item_count()}\n"
-        result2 = f"Order Subtotals:|         ${self.order_cost():.2f}"
-        result += f"{find_spaces(result2, 40)}[Tax: ${self.order_tax():.2f}]\n"
-        result3 = f"Order Total:"
-        result += f"{find_spaces(result3, 40)}${self.order_tax() + self.order_cost():.2f}"
 
-
-        return f"{result}\n------------------------------------------------------"
-
-
-# def find_spaces(str, space):
-#     spaces = space - len(str)
-#     if spaces > 0:
-#         str += " " * spaces
-#     else:
-#         str += " "
-#     return str
-
-def find_spaces(str, column):
-    if len(str) >= column:
-        return ''
-    else:
-        return str + (" " * (column - len(str)))

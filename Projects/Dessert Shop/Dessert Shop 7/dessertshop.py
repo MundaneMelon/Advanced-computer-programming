@@ -6,26 +6,23 @@ def main():
 
     order = Order()
     main_menu(order)
+
+    user_input = input(
+        '''
+ What would you like to add to the order? (1-4, Enter for done):
+1: Cash
+2: Card
+3: Phone
+Enter payment method:'''
+    )
+    if int(user_input) == 1:
+        order.payment_method = PayType.CASH
+    elif int(user_input) == 2:
+        order.payment_method = PayType.CARD
+    elif int(user_input) == 3:
+        order.payment_method = PayType.PHONE
+
     print(order.__str__)
-
-    # print("\n" + " " * 13 + 'Receipt')
-    #
-    # for i in order.order:
-    #     result = find_spaces(i.name)
-    #     if i.calculate_cost() < 10:
-    #         result += " "
-    #
-    #     result += "$" + str(round(i.calculate_cost(), 2)) + " [Tax: $" + str(round(i.calculate_tax(), 2)) + "]"
-    #     print(result)
-    # print("-" * 30)
-
-
-    # print(find_spaces("Order Subtotals:", 30) + " $" + str(round(order.order_cost(), 2)) + '[Tax:$' + str(round(order.order_tax(), 2)) + ']')
-    # print(find_spaces("Order Total:", 30) + " $" + str(round((order.order_cost() + order.order_tax()), 2)))
-    # print(find_spaces("Total items in the order:", 30) + " " + str(order.item_count()))
-
-
-
 
 
 def main_menu(order):
