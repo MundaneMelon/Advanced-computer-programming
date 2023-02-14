@@ -1,7 +1,11 @@
 from desserts import *
 from freeze import *
+from customer import *
 
-customer_db = dict[str]
+global customer_db
+customer_db = {}
+global customer_id
+customer_id = 999
 def main():
 
 
@@ -10,7 +14,7 @@ def main():
     main_menu(order)
     order.sort_items()
 
-    user_input = input(
+    customer_name = input(
         '''
 What is your name?
 ''')
@@ -35,14 +39,29 @@ Enter payment method:'''
         order.payment_method = PayType.PHONE
     print(order.__str__)
 
-    dessertCustomer.add2history(order)
+    check = False
+    for i in customer_db:
+        if i == customer_name:
+            check = True
+
+    if not check:
+        customer_db[customer_name] = Customer(customer_name)
+        global customer_id
+        customer_id += 1
+        customer_db[customer_name].customer_id = customer_id
+
+    customer_db[customer_name].order_history.append(order)
+    customer_db[customer_name].total_orders += 1
+
+
+
+    print(f"Customer Name: {customer_name}       Customer ID: {customer_id}      Total Orders: {customer_db[customer_name].total_orders}")
     user_input = input(
         '''
-Would you like to make another order? [y/n]
+Press y and enter to start a new order
 '''
     )
     if (str(user_input) == 'y'):
-        dessertCustomer.add2history(order)
         main()
 
 
@@ -102,32 +121,32 @@ def user_prompt_sundae(order):
     main_menu(order)
 
 
-class Customer():
-    def __init__(self, customer_name="Robert"):
-        self._customer_name = customer_name
-        self._customer_id = 3748327
-        self.order_history = []
-
-    @property
-    def customer_id(self):
-        return self._customer_id
-
-    @customer_id.setter
-    def customer_id(self, value):
-        self._customer_id = value
-
-    @property
-    def customer_name(self):
-        return self._customer_name
-
-    @customer_name.setter
-    def customer_name(self, value):
-        self._customer_name = value
-
-    def add2history(self, order):
-        self.order_history.append(order)
-        return self
-
+# class Customer():
+#     def __init__(self, customer_name="Robert"):
+#         self._customer_name = customer_name
+#         self._customer_id = 3748327
+#         self.order_history = []
+#
+#     @property
+#     def customer_id(self):
+#         return self._customer_id
+#
+#     @customer_id.setter
+#     def customer_id(self, value):
+#         self._customer_id = value
+#
+#     @property
+#     def customer_name(self):
+#         return self._customer_name
+#
+#     @customer_name.setter
+#     def customer_name(self, value):
+#         self._customer_name = value
+#
+#     def add2history(self, order):
+#         self.order_history.append(order)
+#         return self
+#
 
 # Stuff to do only once so running main again won't break anything
 dessertCustomer = Customer()

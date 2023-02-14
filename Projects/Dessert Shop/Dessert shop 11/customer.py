@@ -6,6 +6,8 @@ class Customer():
         self._customer_name = customer_name
         self._customer_id = 3748327
         self.order_history = []
+        self.total_orders = 0
+
 
     @property
     def customer_id(self):
