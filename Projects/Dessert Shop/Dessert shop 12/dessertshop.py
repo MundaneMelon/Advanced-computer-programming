@@ -183,18 +183,34 @@ class admin():
         admin.admin_menu(order)
 
     def customer_order_history(order, name):
+        customer_check = False
         for i in customer_db:
             if name == i:
-                check = True
-        if check:
+                customer_check = True
+        if customer_check:
             for f in customer_db[i].order_history:
                 print(f.__str__)
         else:
             print("Could not find any customer with that name")
         admin.admin_menu(order)
 
-    def best_customer(self, order):
-        pass
+    def best_customer(order):
+        if len(customer_db) == 0:
+            print("There are not customers yet")
+        else:
+            best_customer = None
+            for i in customer_db:
+                if best_customer == None:
+                    best_customer = i
+                else:
+                    if customer_db[i].total_orders > customer_db[best_customer].total_orders:
+                        best_customer = i
+            print(f'''
+------------------------------------------------------------------------
+The best customer is {best_customer}
+------------------------------------------------------------------------
+                ''')
+        admin.admin_menu(order)
 
 
 
