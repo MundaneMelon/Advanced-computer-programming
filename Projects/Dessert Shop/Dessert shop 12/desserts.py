@@ -271,6 +271,15 @@ class Order():
         self._payment_method = payment_method
 
     @property
+    def order(self):
+        return self._order
+
+    @order.setter
+    def order(self, value):
+        self._order = value
+
+
+    @property
     def payment_method(self):
         return self._payment_method
 

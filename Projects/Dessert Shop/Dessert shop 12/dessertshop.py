@@ -8,9 +8,7 @@ global customer_id
 customer_id = 999
 def main():
 
-
-
-    order = Order()
+    order = Order([])
     main_menu(order)
     order.sort_items()
 
@@ -80,7 +78,6 @@ def main_menu(order):
         user_input = int(input('What would you like to add to the order? (1-5, Enter for done):'))
     except ValueError:
         pass
-    print(" ")
     try:
         if user_input == 1:
             user_prompt_candy(order)
@@ -92,7 +89,6 @@ def main_menu(order):
             user_prompt_sundae(order)
         elif user_input == 5:
             admin.admin_menu(order)
-
     except UnboundLocalError:
         pass
 
@@ -171,7 +167,8 @@ class admin():
             if user_input == 1:
                 admin.shop_customer_list(order)
             elif user_input == 2:
-                admin.customer_order_history(order, name)
+                user_input = input("Customer's name: ")
+                admin.customer_order_history(order, user_input)
             elif user_input == 3:
                 admin.best_customer(order)
             elif user_input == 4:
@@ -186,7 +183,15 @@ class admin():
         admin.admin_menu(order)
 
     def customer_order_history(order, name):
-        pass
+        for i in customer_db:
+            if name == i:
+                check = True
+        if check:
+            for f in customer_db[i].order_history:
+                print(f.__str__)
+        else:
+            print("Could not find any customer with that name")
+        admin.admin_menu(order)
 
     def best_customer(self, order):
         pass
