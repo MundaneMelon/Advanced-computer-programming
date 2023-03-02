@@ -10,9 +10,10 @@ def main():
     run_payroll()  # This function is given to you in Part 2
 
     # Save copy of payroll file; delete old file
-    shutil.copyfile(PAY_LOGFILE, 'paylog_old.txt')
-    if os.path.exists(PAY_LOGFILE):
-        os.remove(PAY_LOGFILE)  # You define PAY_LOGFILE = ‘paylog.txt’ globally
+    shutil.copyfile('paylog.txt', 'paylog_old.txt')
+    if os.path.exists('paylog.txt'):
+        # os.remove('paylog.txt')  # You define PAY_LOGFILE = ‘paylog.txt’ globally
+        pass
 
     # Change Issie Scholard to Salaried by changing the Employee object:
     emp = find_employee_by_id('51-4678119')
@@ -26,7 +27,6 @@ def main():
     clas.add_receipt(1109.73)
     clas.add_receipt(746.10)
     emp.issue_payment()
-
     # Change Jed Netti to Hourly; add some hour entries
     emp = find_employee_by_id('68-9609244')
     emp.make_hourly(47)
