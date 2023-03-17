@@ -2,7 +2,7 @@
 // Created by fryepre000 on 3/8/2023.
 //
 
-#include "Node.h"
+
 
 struct Node
 {
@@ -10,5 +10,5 @@ struct Node
     Node* tail;
     Node* head;
 
-    Node(int d, Node* h, Node* t) : data(d), head(h), tail(t) {}
+    Node(int d,  Node* h, Node* t) : data(d), head(h), tail(t) {}
 };

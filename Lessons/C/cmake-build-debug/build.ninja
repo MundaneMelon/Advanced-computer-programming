@@ -79,6 +79,18 @@ build CMakeFiles/C.dir/3_8_23/main.cpp.obj: CXX_COMPILER__C_Debug C$:/Users/frye
   OBJECT_DIR = CMakeFiles\C.dir
   OBJECT_FILE_DIR = CMakeFiles\C.dir\3_8_23
 
+build CMakeFiles/C.dir/3_17_23/Node.cpp.obj: CXX_COMPILER__C_Debug C$:/Users/fryepre000/Documents/GitHub/Advanced-computer-programming/Lessons/C/3$ 17$ 23/Node.cpp || cmake_object_order_depends_target_C
+  DEP_FILE = CMakeFiles\C.dir\3_17_23\Node.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\C.dir
+  OBJECT_FILE_DIR = CMakeFiles\C.dir\3_17_23
+
+build CMakeFiles/C.dir/3_17_23/DoublyLinkedList.cpp.obj: CXX_COMPILER__C_Debug C$:/Users/fryepre000/Documents/GitHub/Advanced-computer-programming/Lessons/C/3$ 17$ 23/DoublyLinkedList.cpp || cmake_object_order_depends_target_C
+  DEP_FILE = CMakeFiles\C.dir\3_17_23\DoublyLinkedList.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\C.dir
+  OBJECT_FILE_DIR = CMakeFiles\C.dir\3_17_23
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target C
@@ -87,7 +99,7 @@ build CMakeFiles/C.dir/3_8_23/main.cpp.obj: CXX_COMPILER__C_Debug C$:/Users/frye
 #############################################
 # Link the executable C.exe
 
-build C.exe: CXX_EXECUTABLE_LINKER__C_Debug CMakeFiles/C.dir/Stacks/Queue.cpp.obj CMakeFiles/C.dir/Stacks/Stack.cpp.obj CMakeFiles/C.dir/3_8_23/doubly_test.cpp.obj CMakeFiles/C.dir/3_8_23/Node.cpp.obj CMakeFiles/C.dir/3_8_23/main.cpp.obj
+build C.exe: CXX_EXECUTABLE_LINKER__C_Debug CMakeFiles/C.dir/Stacks/Queue.cpp.obj CMakeFiles/C.dir/Stacks/Stack.cpp.obj CMakeFiles/C.dir/3_8_23/doubly_test.cpp.obj CMakeFiles/C.dir/3_8_23/Node.cpp.obj CMakeFiles/C.dir/3_8_23/main.cpp.obj CMakeFiles/C.dir/3_17_23/Node.cpp.obj CMakeFiles/C.dir/3_17_23/DoublyLinkedList.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\C.dir
