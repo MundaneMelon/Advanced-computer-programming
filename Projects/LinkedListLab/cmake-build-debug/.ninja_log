@@ -1,0 +1,19 @@
+# ninja log v5
+2	729	7011235740592899	CMakeFiles/LinkedListLab.dir/Node.cpp.obj	e12f69d6ee34c7db
+2	513	7011236112017195	CMakeFiles/LinkedListLab.dir/main.cpp.obj	3e37ce0b7072c246
+7	503	7011236287274429	CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj	3d3c86f1159da77c
+7	509	7011238059675998	CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj	3d3c86f1159da77c
+7	521	7011238350695166	CMakeFiles/LinkedListLab.dir/main.cpp.obj	3e37ce0b7072c246
+19	553	7011238933621552	CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj	3d3c86f1159da77c
+7	562	7011238933711303	CMakeFiles/LinkedListLab.dir/main.cpp.obj	3e37ce0b7072c246
+18	519	7011239253516675	CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj	3d3c86f1159da77c
+6	526	7011239253597804	CMakeFiles/LinkedListLab.dir/main.cpp.obj	3e37ce0b7072c246
+7	507	7011244423762334	CMakeFiles/LinkedListLab.dir/main.cpp.obj	3e37ce0b7072c246
+6	519	7011248734745972	CMakeFiles/LinkedListLab.dir/main.cpp.obj	3e37ce0b7072c246
+19	528	7011248734837614	CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj	3d3c86f1159da77c
+528	872	7011248738189294	LinkedListLab.exe	cf5c431263dd1b7
+7	520	7011249266340689	CMakeFiles/LinkedListLab.dir/main.cpp.obj	3e37ce0b7072c246
+20	528	7011249266410504	CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj	3d3c86f1159da77c
+7	542	7011249878111021	CMakeFiles/LinkedListLab.dir/main.cpp.obj	3e37ce0b7072c246
+20	556	7011249878262065	CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj	3d3c86f1159da77c
+557	877	7011249881369403	LinkedListLab.exe	cf5c431263dd1b7

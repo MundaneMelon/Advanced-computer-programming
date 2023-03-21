@@ -8,7 +8,6 @@ struct Node
 {
     int data;
     Node* tail;
-    Node* head;
 
     Node(int d,  Node* h, Node* t) : data(d), head(h), tail(t) {}
 };
