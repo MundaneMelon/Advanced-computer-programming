@@ -30,7 +30,7 @@ def main():
     global total_duplicate_emails
     global total_invalid_emails
 
-    for i in range(1000):
+    for i in range(200):
         for i in range(4):
             check = False
             while not check:
@@ -45,7 +45,6 @@ def main():
                     f.write(f"{temp_email},")
                     total_emails_written += 1
                     check = True
-
         check = False
         while not check:
             temp_email = f"{first_names[random.randint(0, len(first_names) - 1)]}.\

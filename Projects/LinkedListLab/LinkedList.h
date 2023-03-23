@@ -15,9 +15,10 @@ private:
     Node* last_node;
 public:
     LinkedList();
-    LinkedList(Node* newFirstNode, Node* newLastNode);
+    LinkedList(Node* newFirstNode);
     ~LinkedList();
-
+    void insert(Node to_insert);
+    Node* read(int value);
     void printHello();
 };
 

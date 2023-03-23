@@ -1,7 +1,7 @@
 struct Node
 {
     int data;
-    Node* tail;
+    Node* head;
 
-    Node(int d, Node* t) : data(d), tail(t) {}
+    Node(int d, Node* h) : data(d), head(h) {}
 };

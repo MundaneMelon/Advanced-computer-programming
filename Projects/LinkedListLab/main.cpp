@@ -7,4 +7,7 @@ int main()
 {
     LinkedList thing;
     thing.printHello();
+
+    std::cout<<thing.read(5)<<std::endl;
+
 }
