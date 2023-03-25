@@ -1,13 +1,17 @@
-#include "LinkedList.h"
-
-#include "LinkedList.h"
+#include "LinkedList.cpp"
 #include <iostream>
 
 int main()
 {
-    LinkedList thing;
-    thing.printHello();
+    LinkedList thing = LinkedList(new Node(1, nullptr));
+    thing.insert(2);
+    thing.insert(3);
+    thing.insert(4);
+    thing.insert(5);
+    thing.first_node = thing.sort(thing.first_node);
+    std::cout<<thing.indexOf(2);
 
-    std::cout<<thing.read(5)<<std::endl;
+
 
 }
+

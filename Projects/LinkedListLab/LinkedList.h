@@ -11,15 +11,20 @@
 class LinkedList
 {
 private:
-    Node* first_node;
-    Node* last_node;
+
 public:
+    Node* first_node;
     LinkedList();
     LinkedList(Node* newFirstNode);
     ~LinkedList();
-    void insert(Node to_insert);
+
+    void insert(int value);
     Node* read(int value);
-    void printHello();
+    Node* sort(Node* first_node);
+    Node* sortedInsert(Node* sortedFirstNode, Node* current);
+    void remove(Node* target);
+    int indexOf(int value);
+
 };
 
 

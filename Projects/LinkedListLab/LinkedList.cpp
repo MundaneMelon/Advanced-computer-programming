@@ -19,41 +19,105 @@ LinkedList::~LinkedList()
 Node* LinkedList::read(int value)
 {
     Node* search_node = first_node;
-    if (search_node->data == value)
+    while (true)
     {
-        return first_node;
+        if (search_node->data == value)
+        {
+            return search_node;
+        }
+
+        if (search_node->head == nullptr)
+        {
+            return nullptr;
+        }
+        search_node = search_node->head;
+    }
+}
+
+int LinkedList::indexOf(int value)
+{
+    int index = 0;
+    Node* search_node = first_node;
+    while(true)
+    {
+        if (search_node->data == value)
+        {
+            return index;
+        }
+        if (search_node->head == nullptr)
+        {
+            return -1;
+        }
+        index += 1;
+        search_node = search_node->head;
+    }
+}
+
+void LinkedList::remove(Node* target)
+{
+    if (first_node == target)
+    {
+        first_node = target->head;
+        delete target;
     }
     else
     {
-        search_node = search_node->head;
-        bool check = false;
+        Node* search_node = first_node;
         while (true)
         {
-            if (search_node->data == value)
+            if (search_node->head == target)
             {
-                return search_node;
+                search_node->head = target->head;
+                break;
             }
-            else if (search_node->head == nullptr)
+            if (search_node->head == nullptr)
             {
-                std::cout<<"Ummmm yeah it's not here, sorry bout that"<<std::endl;
-                return nullptr;
+                std::cout<<"Could not find target"<<std::endl;
+                break;
             }
-            else
-            {
-                search_node = search_node->head;
-            }
+            search_node = search_node->head;
         }
+
     }
-
 }
 
-void LinkedList::insert(Node to_insert)
+void LinkedList::insert(int value)
 {
-    to_insert.head = first_node;
-    first_node = &to_insert;
+    Node* temp = new Node(value, nullptr);
+    temp->head = first_node;
+    first_node = temp;
 }
 
-void LinkedList::printHello()
+
+Node* LinkedList::sort(Node* first_node)
 {
-    std::cout<<"hello"<<std::endl;
+    Node* current = first_node;
+    Node* sortedFirstNode = NULL;
+    while (current != nullptr)
+    {
+        Node* currentHead = current->head;
+        sortedFirstNode = sortedInsert(sortedFirstNode, current);
+        current = currentHead;
+    }
+    return sortedFirstNode;
+}
+
+Node* LinkedList::sortedInsert(Node* sortedFirstNode, Node* current)
+{
+    if (sortedFirstNode == nullptr || sortedFirstNode->data >= current->data)
+    {
+        current->head = sortedFirstNode;
+        return current;
+    }
+    else
+    {
+        Node* temp = sortedFirstNode;
+        while(temp->head != nullptr && temp->head->data < current->data)
+        {
+            temp = temp->head;
+        }
+        current->head = temp->head;
+        temp->head = current;
+    }
+    return sortedFirstNode;
 }
