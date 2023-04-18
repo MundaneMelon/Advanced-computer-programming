@@ -10,6 +10,7 @@ def gui_main():
 
 
 def screen1(window):
+    refresh(window)
     l = tkinter.Label(window, text = "What would you like to add to the order?",)
     l.config(font = ("Courier", 9))
     l.pack()
@@ -23,8 +24,11 @@ def screen1(window):
 
 def candy_screen(window):
     refresh(window)
+    l1 = tkinter.Label(window, text = "What type of candy would you like to order?").pack()
+    i1 = tkinter.Text(window, height=1, width=35).pack()
+    b1 = tkinter.Button(window, text="I want to go back :(", command= lambda : screen1(window)).pack()
     window.mainloop()
 
 def refresh(window):
-
-
+    for widget in window.winfo_children():
+        widget.destroy()
