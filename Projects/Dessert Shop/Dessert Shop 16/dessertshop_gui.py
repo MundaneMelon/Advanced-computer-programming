@@ -139,7 +139,7 @@ def add_order(window, order, dessert, name, weight, price, topping, toppingprice
             print("Something wacky is going on man")
     except ValueError:
         error_screen(window, order)
-    screen1(window, order)
+    packaging_screen(window, order)
 
 
 def error_screen(window, order):
@@ -178,6 +178,36 @@ def order_result_screen(window, order, customer_name):
 def new_order(window):
     order = Order([])
     screen1(window, order)
+
+
+def packaging_screen(window, order):
+    refresh(window)
+    window.geometry('250x250')
+    tkinter.Label(window, text="What packaging type do you want?").pack()
+    tkinter.Label(window, text=f"Current packaging selected: {order.order[-1].packaging}").pack()
+    tkinter.Button(window, text="Bag", command= lambda : apply_packaging(window, order, "Bag")).pack()
+    tkinter.Button(window, text="Box", command = lambda : apply_packaging(window, order, "Box")).pack()
+    tkinter.Button(window, text="Bowl", command= lambda : apply_packaging(window, order, "Bowl")).pack()
+    tkinter.Button(window, text="Boat", command = lambda : apply_packaging(window, order, "Boat")).pack()
+    window.mainloop()
+
+def apply_packaging(window, order, packaging):
+    order.order[-1].packaging = packaging
+    screen1(window, order)
+
+def payment_type_screen(window, order):
+    refresh(window)
+    window.geometry('300x250')
+    tkinter.Label(window, text="What payment method would you like to use?").pack()
+    tkinter.Label(window, text=f"Current packaging selected: {order.order[-1].packaging}").pack()
+    tkinter.Button(window, text="Card", command=lambda: apply_payment_type(window, order, "Card")).pack()
+    tkinter.Button(window, text="Cash", command=lambda: apply_payment_type(window, order, "Cash")).pack()
+    tkinter.Button(window, text="Phone", command=lambda: apply_payment_type(window, order, "Phone")).pack()
+
+def apply_payment_type(window, order, paymenttype):
+    order.payment_method = paymenttype
+
+
 
 # stuff to log prints
 class PrintLogger:
