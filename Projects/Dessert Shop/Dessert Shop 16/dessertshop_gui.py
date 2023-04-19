@@ -28,7 +28,7 @@ def screen1(window, order):
     tkinter.Button(window, text="Cookie", command=lambda: cookie_screen(window, order)).pack()
     tkinter.Button(window, text="Ice Cream", command=lambda: icecream_screen(window, order)).pack()
     tkinter.Button(window, text="Sundae", command=lambda: sundae_screen(window, order)).pack()
-    tkinter.Button(window, text="Done with order", command=lambda: final_details_screen(window, order)).pack()
+    tkinter.Button(window, text="Done with order", command=lambda: payment_type_screen(window, order)).pack()
 
     textbox = tkinter.Text(window, background="#d9d9d9")
     textbox.pack()
@@ -206,6 +206,7 @@ def payment_type_screen(window, order):
 
 def apply_payment_type(window, order, paymenttype):
     order.payment_method = paymenttype
+    final_details_screen(window, order)
 
 
 

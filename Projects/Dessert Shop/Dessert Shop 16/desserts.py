@@ -331,7 +331,7 @@ class Order():
         result += f"{find_spaces(result2, 40)}[Tax: ${self.order_tax():.2f}]\n"
         result3 = f"Order Total:"
         result += f"{find_spaces(result3, 40)}${self.order_tax() + self.order_cost():.2f}"
-        return f"{result}\n------------------------------------------------------\n\Paid with {self.payment_method.name}"
+        return f"{result}\n------------------------------------------------------\n\Paid with {self.payment_method}"
 
 # def find_spaces(str, space):
 #     spaces = space - len(str)
