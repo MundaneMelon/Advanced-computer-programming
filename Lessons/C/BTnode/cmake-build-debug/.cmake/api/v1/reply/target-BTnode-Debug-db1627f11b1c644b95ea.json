@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "LinkedListLab.exe"
+			"path" : "BTnode.exe"
 		},
 		{
-			"path" : "LinkedListLab.pdb"
+			"path" : "BTnode.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -54,11 +54,11 @@
 			[
 				0,
 				1,
-				2
+				3
 			]
 		}
 	],
-	"id" : "LinkedListLab::@6890427a1f51a3e7e1df",
+	"id" : "BTnode::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -78,8 +78,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "LinkedListLab",
-	"nameOnDisk" : "LinkedListLab.exe",
+	"name" : "BTnode",
+	"nameOnDisk" : "BTnode.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -93,14 +93,15 @@
 			[
 				0,
 				1,
-				2
+				3
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				3
+				2,
+				4
 			]
 		}
 	],
@@ -115,18 +116,23 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Node.cpp",
+			"path" : "BTNode.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "BTNode.h",
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LinkedList.cpp",
+			"path" : "BinaryTree.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "LinkedList.h",
+			"path" : "BinaryTree.h",
 			"sourceGroupIndex" : 1
 		}
 	],

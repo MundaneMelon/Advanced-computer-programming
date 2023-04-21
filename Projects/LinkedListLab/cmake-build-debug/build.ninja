@@ -67,6 +67,12 @@ build CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj: CXX_COMPILER__LinkedListL
   OBJECT_DIR = CMakeFiles\LinkedListLab.dir
   OBJECT_FILE_DIR = CMakeFiles\LinkedListLab.dir
 
+build CMakeFiles/LinkedListLab.dir/DataArray.cpp.obj: CXX_COMPILER__LinkedListLab_Debug C$:/Users/fryepre000/Documents/GitHub/Advanced-computer-programming/Projects/LinkedListLab/DataArray.cpp || cmake_object_order_depends_target_LinkedListLab
+  DEP_FILE = CMakeFiles\LinkedListLab.dir\DataArray.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\LinkedListLab.dir
+  OBJECT_FILE_DIR = CMakeFiles\LinkedListLab.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LinkedListLab
@@ -75,7 +81,7 @@ build CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj: CXX_COMPILER__LinkedListL
 #############################################
 # Link the executable LinkedListLab.exe
 
-build LinkedListLab.exe: CXX_EXECUTABLE_LINKER__LinkedListLab_Debug CMakeFiles/LinkedListLab.dir/main.cpp.obj CMakeFiles/LinkedListLab.dir/Node.cpp.obj CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj
+build LinkedListLab.exe: CXX_EXECUTABLE_LINKER__LinkedListLab_Debug CMakeFiles/LinkedListLab.dir/main.cpp.obj CMakeFiles/LinkedListLab.dir/Node.cpp.obj CMakeFiles/LinkedListLab.dir/LinkedList.cpp.obj CMakeFiles/LinkedListLab.dir/DataArray.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\LinkedListLab.dir
