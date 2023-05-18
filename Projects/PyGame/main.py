@@ -32,6 +32,7 @@ while True:
     if game.active:
         game.show_pizza(screen)
         game.print_cookie_text(screen)
+        game.print_header(screen)
 
     pygame.display.update()
     clock.tick(200)
