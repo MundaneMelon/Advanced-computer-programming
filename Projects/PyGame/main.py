@@ -5,7 +5,7 @@ from game import *
 pygame.init()
 screen = pygame.display.set_mode((500, 500))
 clock = pygame.time.Clock()
-game = Game('Images/jerma.jpg', 'Images/black_background.png', 'Images/pizza.jpg')
+game = Game('Images/jerma.jpg', 'Images/black_background.png', 'Images/pizza.png')
 game.resize_images()
 check = True
 moveSpeed = 10
@@ -17,21 +17,21 @@ while True:
             pygame.quit()
             sys.exit() # shutdown game completely
 
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            game.mouse_inputs()
+
         if check:
-            game.jiggle_pizza()
-            check = False
+            pass #wat
         else:
             game.resize_images()
-            check = True
 
 
 
     game.show_background(screen)
 
     if game.active:
-        game.show_jerma(screen)
         game.show_pizza(screen)
-        game.update_jerma()
+        game.print_cookie_text(screen)
 
     pygame.display.update()
-    clock.tick(60)
+    clock.tick(200)

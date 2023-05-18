@@ -1,0 +1,46 @@
+private void addGameCubeStickyKeyToggles()
+  {
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_0.getBoolean())
+    {
+      
+    }
+    }
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_1.getBoolean())
+    {
+
+    }
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_2.getBoolean())
+    {
+
+    }
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_3.getBoolean())
+    {
+
+    }
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_4.getBoolean())
+    {
+
+    }
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_5.getBoolean())
+    {
+
+    }
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_6.getBoolean())
+    {
+
+    }
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_7.getBoolean())
+    {
+
+    }
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_8.getBoolean())
+    {
+
+    }
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_9.getBoolean())
+    {
+
+    if (BooleanSetting.MAIN_STICKY_KEY_TOGGLE_GC_10.getBoolean())
+    {
+
+  }

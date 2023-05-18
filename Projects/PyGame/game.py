@@ -8,23 +8,25 @@ class Game:
         self.jerma = pygame.image.load(jerma_img).convert_alpha()
         self.background = pygame.image.load(background_img).convert_alpha()
         self.pizza = pygame.image.load(pizza_img).convert_alpha()
-        self.jerma_pos = [250, 250]
+        self.pizza_hitbox = pygame.Rect(50,125,200,200)
         self.cookies = 0
+        self.font = pygame.font.Font('freesansbold.ttf', 32)
+        self.text = self.font.render(str(self.cookies), True, (136, 0, 204))
 
-    def show_jerma(self, screen):
-        screen.blit(self.jerma, self.jerma_pos)
     def show_pizza(self, screen):
-        screen.blit(self.pizza, (10,10))
-
+        screen.blit(self.pizza, (50,125))
     def show_background(self, screen):
-        screen.blit(self.background, (0,0))
-
+        # screen.blit(self.background, (0,0))
+        screen.fill((238, 204, 255))
     def resize_images(self):
         self.jerma = pygame.transform.scale(self.jerma, (10, 10))
         self.pizza = pygame.transform.scale(self.pizza, (200, 200))
-
     def jiggle_pizza(self):
         self.pizza = pygame.transform.scale(self.pizza, (210, 210))
-
-    def update_jerma(self):
-        self.jerma_pos = (pygame.mouse.get_pos()[0] -5, pygame.mouse.get_pos()[1])
+    def print_cookie_text(self, screen):
+        self.text = self.font.render(str(self.cookies), True, (136, 0, 204))
+        screen.blit(self.text, (10, 450))
+    def mouse_inputs(self):
+        position = pygame.mouse.get_pos()
+        if self.pizza_hitbox.collidepoint(position):
+            self.cookies += 1
