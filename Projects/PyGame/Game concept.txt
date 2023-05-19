@@ -1,20 +1,20 @@
 Ok so clicking works now. Here's the plaaaaaannnn
 
-1. Make a function that will decide whether to print the
-individual table icons stuff based on money,
-just do a rect with an image and text ont top
-
-2. Make each image intractable, by keeping track of how many,
-and also subtracting that amount from your cookies
-(formulas for what the exchange rate is)
-
-3. Have cookies grow and increase on their own.
-
-4. Find out the overarching formulas for cookies gained without action,
-and cookies gained from clicking
 
 
 
 Final polish:
 Wiggling cookie
-that's about it lol
+Time scale
+
+Numbers:
+
+1: + 0.2 cps, 15%, $15
+2: + 0.8 cps, 15%, $15
+3: + 5 cps, 10%, $500
+4: + 12 cps, 10%, %2,000
+5:
+6:
+7:
+8:
+9:
