@@ -8,7 +8,7 @@ screen = pygame.display.set_mode((500, 500))
 clock = pygame.time.Clock()
 timer = 0
 
-game = Game('Images/black_background.png', 'Images/pizza.png')
+game = Game('cookie.png')
 
 #Buttons
 cursor = Upgrade(game, 15, "Cursor", 1, 0)

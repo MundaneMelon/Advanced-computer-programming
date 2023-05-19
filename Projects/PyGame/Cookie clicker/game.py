@@ -4,15 +4,15 @@ import random
 
 
 class Game:
-    def __init__(self, background_img, pizza_img):
+    def __init__(self, pizza_img):
         self.active = True
-        self.background = pygame.image.load(background_img).convert_alpha()
         self.pizza = pygame.image.load(pizza_img).convert_alpha()
         self._cookies = 0
         self.font = pygame.font.Font('freesansbold.ttf', 32)
         self.time_scale_font = pygame.font.Font('freesansbold.ttf', 28)
         self.text = self.font.render(str(int(self.cookies)), True, (136, 0, 204))
         self._cps = 0
+        self._cool_cookie_number = 1
         self._button_array = []
         self.time_scale = 1.0
 
@@ -79,7 +79,7 @@ class Game:
         screen.blit(temp_text, (10, 450))
 
     def print_header(self, screen):
-        screen.blit(self.font.render("SUGAR COOKIE CLICKER", True, (0, 0, 0)), (10, 10))
+        screen.blit(self.font.render("purple cookie clicker", True, (0, 0, 0)), (10, 10))
 
     def compile_cookies(self, milliseconds):
         self.cookies += self.cps / (1000 / milliseconds)
@@ -120,7 +120,7 @@ class Upgrade():
                 text_color = (0, 0, 0)
             else:
                 white_box_color = (128, 128, 128)
-                text_color = (255, 0, 0)
+                text_color = (175, 0, 0)
 
             height = 60 + (65 * self.button_num)
             # Black box
